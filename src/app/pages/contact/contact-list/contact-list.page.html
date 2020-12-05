@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>contact-list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let contact of contactList">
+
+      {{ contact.name }}
+
+      <ion-buttons slot="end">
+        <ion-button (click)="deleteContact(contact.id)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+        <ion-button routerLink="/contact-details/{{ contact.id }}">
+          <ion-icon name="chevron-forward-circle-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button expand="block" routerLink="/contact-form">
+      Ajouter un contact
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

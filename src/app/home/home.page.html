@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title >
+      Applications
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-button expand="block" *ngFor="let link of linkList" (click)="goToPage(link)">
+    {{ link.label }}
+  </ion-button>
+  
+</ion-content>
+
+
